@@ -1,0 +1,176 @@
+:root {
+  --azul-principal: #05285C;
+  --azul-circulo: #3866A9;
+  --cinza-bg: #fff;
+  --borda-card: #e3e7ed;
+  --azul-btn: #e6f0fa;
+  --azul-btn-hover: #d4e5f7;
+  --azul-leve: #eaf3fa;
+  --cinza-txt: #68718d;
+  --logo-color: #0C326C;
+}
+
+* { 
+  box-sizing: border-box; 
+  margin: 0; 
+  padding: 0; 
+  font-family: "Arial", sans-serif;
+}
+
+html, body {
+  width: 100vw; 
+  height: 100%; 
+  min-height: 100vh; 
+  background: var(--cinza-bg);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  overflow-x: hidden;
+  min-height: 100vh;
+  position: relative;
+}
+
+.container {
+  width: 100vw;
+  max-width: 410px;
+  min-height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 60px;
+  padding-bottom: 110px; /* espaço para dock */
+  background: var(--cinza-bg);
+  box-sizing: border-box;
+}
+
+.logo-senz {
+  margin-bottom: 22px;
+  text-align: center;
+}
+
+.logo-senz .logo-text {
+  color: var(--logo-color);
+  font-weight: bold;
+  font-size: 1.56rem;
+  letter-spacing: 2px;
+}
+
+.perfil-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 32px;
+  width: 100%;
+}
+
+.perfil-img {
+  width: 108px; 
+  height: 108px;
+  border-radius: 50%;
+  background: var(--azul-leve);
+  object-fit: cover;
+  border: 3px solid var(--borda-card);
+  margin-bottom: 10px;
+}
+
+.perfil-letra {
+  width: 108px;
+  height: 108px;
+  border-radius: 50%;
+  background: var(--azul-leve);
+  color: var(--azul-principal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  border: 3px solid var(--borda-card);
+}
+
+.perfil-nome {
+  font-weight: bold;
+  color: var(--azul-principal);
+  font-size: 1.19rem;
+  margin-bottom: 3px;
+  text-align: center;
+}
+
+.perfil-info {
+  color: var(--cinza-txt);
+  font-size: 1.04rem;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 4px;
+}
+
+.btn-perfil {
+  width: 97%; 
+  max-width: 350px;
+  background: var(--azul-btn);
+  color: var(--azul-principal);
+  border: none;
+  border-radius: 8px;
+  padding: 13px 0;
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 11px 0 0;
+  cursor: pointer;
+  transition: background 0.18s;
+  box-shadow: 0 1.2px 7px #e5eaf3;
+  display: block;
+}
+
+.btn-perfil:hover { 
+  background: var(--azul-btn-hover); 
+}
+
+/* Dock padrão SENZ */
+   .dock{
+      position:fixed;left:50%;bottom:max(20px, env(safe-area-inset-bottom,0px));
+      transform:translateX(-50%);
+      display:flex;gap:22px;background:#f7f7f7;
+      padding:12px 20px;border-radius:20px;
+      box-shadow:0 3px 10px rgba(0,0,0,.1);z-index:999;
+    }
+    .dock-icon{
+      width:42px;height:42px;border-radius:50%;background:#e3e3e3;
+      display:flex;align-items:center;justify-content:center;
+      transition:transform .2s, background .3s;cursor:pointer;
+    }
+    .dock-icon:hover{transform:scale(1.12)}
+    .dock-icon.active{background:#3866A9}
+    .dock-icon svg{width:24px;height:24px;fill:#05285c}
+    .dock-icon.active svg{fill:#fff}
+
+    @media (min-width: 900px){
+      .hero{border-bottom-left-radius:38% 12%;border-bottom-right-radius:38% 12%}
+    }
+
+/* Responsivo */
+@media (max-width: 900px) {
+  .container { max-width: 99vw; padding-top: 36px; }
+  .logo-senz .logo-text { font-size: 1.18rem; }
+  .perfil-img, .perfil-letra { width: 80px; height: 80px; font-size: 36px; }
+  .btn-perfil { padding: 10px 0; font-size: 0.97rem; }
+ 
+}
+
+@media (max-width: 600px) {
+  .container { max-width: 100vw; padding-left: 3vw; padding-right: 3vw; }
+}
+
+@media (max-width: 480px) {
+  .container { padding-top: 23px; padding-bottom: 83px; }
+  .logo-senz .logo-text { font-size: 1rem; }
+  .perfil-img, .perfil-letra { width: 58px; height: 58px; font-size: 24px; }
+  .btn-perfil { padding: 8px 0; font-size: 0.89rem; }
+
+}

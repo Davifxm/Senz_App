@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sons da Natureza</title>
+<link rel="stylesheet" href="../assets/css/style18.css">
+</head>
+<body>
+
+  <div class="back" onclick="history.back()" aria-label="Voltar">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+  </div>
+
+  <div class="title">Músicas Calmantes</div>
+  <div class="subtitle">Práticas para aliviar o estresse</div>
+
+  <div class="card">
+    <div class="cover"><img src="../assets/img/arvores SONATU.png" alt="Capa de árvores"></div>
+
+    <div class="row">
+      <div class="arrow" id="uiPrev" aria-label="Anterior">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+      </div>
+      <div class="track-title" id="trackTitle">Chuva Suave</div>
+      <div class="arrow" id="uiNext" aria-label="Próxima">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.59 13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button class="btn secondary" id="prevBtn">◀ Anterior</button>
+      <button class="btn" id="playBtn">▶ Tocar</button>
+      <button class="btn secondary" id="nextBtn">Próxima ▶</button>
+    </div>
+
+    <div class="bar" id="progressBar" aria-label="Progresso">
+      <div class="bar-fill" id="progressFill"></div>
+      <div class="bar-knob" id="progressKnob"></div>
+    </div>
+    <div class="time"><span id="currTime">0:00</span><span id="totalTime">0:00</span></div>
+
+    <!-- Botões de ação -->
+    <button class="choose"   id="openPicker">🎵 Escolher músicas</button>
+    <!-- NOVO: liga a outra página -->
+    <button class="go-other" id="goOther">🌊 Outras músicas (Sons do Mar)</button>
+  </div>
+
+  <!-- Bottom-sheet da playlist -->
+  <div class="sheet-overlay" id="sheet">
+    <div class="sheet">
+      <h3>Escolha uma música</h3>
+      <div class="playlist" id="playlistEl"></div>
+      <button class="choose" id="closePicker">Fechar</button>
+    </div>
+  </div>
+
+  <!-- dock -->
+  <div class="dock">
+    <!-- Casa (ativo) -->
+    <div class="dock-icon" onclick="setActive(this);window.location.href='telainicial.html';">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+      </svg>
+    </div>
+
+    <!-- Frequência Cardíaca -->
+    <div class="dock-icon active" onclick="setActive(this);window.location.href='intervencoes.html';">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 
+        12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 
+        3.41 0.81 4.5 2.09C13.09 3.81 14.76 3 
+        16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 
+        6.86-8.55 11.54L12 21.35z"/>
+      </svg>
+    </div>
+
+    <!-- Histórico Emocional -->
+    <div class="dock-icon" onclick="setActive(this);window.location.href='historico.html';">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M12 2C6.48 2 2 6.48 2 
+          12s4.48 10 10 10 10-4.48 10-10S17.52 
+          2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 
+          8-8 8 3.59 8 8-3.59 8-8 8zm1-13h-2v6h6v-2h-4z"/>
+      </svg>
+    </div>
+
+    <!-- Gráficos -->
+    <div class="dock-icon" onclick="setActive(this);window.location.href='dados.html';">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M3 17h2v-7H3v7zm4 
+          0h2V7H7v10zm4 0h2v-4h-2v4zm4 
+          0h2V4h-2v13zm4 0h2v-9h-2v9z"/>
+      </svg>
+    </div>
+
+    <!-- Perfil -->
+    <div class="dock-icon" onclick="setActive(this);window.location.href='perfil.html';">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 
+          1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 
+          1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Player YouTube invisível -->
+  <div id="yt-holder"><div id="player"></div></div>
+  <script src="https://www.youtube.com/iframe_api"></script>
+
+<script src="../assets/js/script18.js"></script>
+</body>
+</html>

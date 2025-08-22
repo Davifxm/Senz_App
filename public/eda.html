@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SENZ</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+  <script src="../config.js"></script>
+  <link rel="stylesheet" href="../assets/css/style3.css">
+</head>
+<body>
+  <div class="tela-12">
+    <div class="frequ-ncia-card-aca">EDA (Atividade Galvânica)</div>
+    <div class="_29-de-junho">Atualizado agora</div>
+    <div id="proximaAtualizacao" style="position: absolute; top: 50px; right: 20px; font-size: 10px; color: #666;">Próxima atualização: --:--</div>
+    <button id="btnAtualizar" onclick="forcarAtualizacao()" style="position: absolute; top: 20px; right: 20px; background: #3866A9; color: white; border: none; padding: 8px 16px; border-radius: 20px; cursor: pointer; font-size: 12px;">Atualizar</button>
+    <div id="statusFirebase" style="position: absolute; top: 80px; right: 20px; font-size: 10px; color: #3866A9; background: rgba(56, 102, 169, 0.1); padding: 5px 10px; border-radius: 10px;">Buscando dados do Firebase...</div>
+
+    <div class="rectangle-30">
+      <canvas id="graficoEDA"></canvas>
+    </div>
+
+    <div class="_76-bpm" id="edaDisplay">-- μS</div>
+
+    <div class="rectangle-38">
+      <p id="interpretacaoEDA"></p>
+      <div id="detalhesEDA" style="margin-top: 10px; font-size: 14px; color: #666;">
+        <div id="statusDetalhadoEDA"></div>
+        <div id="recomendacoesEDA" style="margin-top: 8px;"></div>
+      </div>
+    </div>
+
+    <div class="rectangle-39">
+      <p><strong>Não há riscos se você se sente bem.</strong><br>Se houver apatia emocional ou sensação de desconexão, pode ser interessante buscar orientação.</p>
+    </div>
+
+    <div class="rectangle-40">
+      <strong>Como manter estável:</strong>
+      <ul>
+        <li>Pratique técnicas de relaxamento</li>
+        <li>Faça pausas durante o dia</li>
+        <li>Evite estímulos excessivos</li>
+        <li>Converse com pessoas próximas</li>
+        <li>Mantenha rotina com atividades prazerosas</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Rodapé Dock -->
+  <div class="dock">
+    <!-- Casa (ativo) -->
+    <div class="dock-icon active" onclick="setActive(this);window.location.href='telainicial.html';">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+      </svg>
+    </div>
+
+    <!-- Frequência Cardíaca -->
+    <div class="dock-icon" onclick="setActive(this);window.location.href='intervencoes.html';">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 
+        12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 
+        3.41 0.81 4.5 2.09C13.09 3.81 14.76 3  
+        16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 
+        6.86-8.55 11.54L12 21.35z"/>
+      </svg>
+    </div>
+
+    <!-- Histórico Emocional -->
+    <div class="dock-icon" onclick="setActive(this);window.location.href='historico.html';">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M12 2C6.48 2 2 6.48 2 
+          12s4.48 10 10 10 10-4.48 10-10S17.52 
+          2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 
+          8-8 8 3.59 8 8-3.59 8-8 8zm1-13h-2v6h6v-2h-4z"/>
+      </svg>
+    </div>
+
+    <!-- Gráficos -->
+    <div class="dock-icon" onclick="setActive(this);window.location.href='dados.html';">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M3 17h2v-7H3v7zm4 
+          0h2V7H7v10zm4 0h2v-4h-2v4zm4 
+          0h2V4h-2v13zm4 0h2v-9h-2v9z"/>
+      </svg>
+    </div>
+
+    <!-- Perfil -->
+    <div class="dock-icon" onclick="setActive(this);window.location.href='perfil.html';">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 
+          1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 
+          1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+      </svg>
+    </div>
+  </div>
+<script src="../assets/js/script3.js"></script>
+</body>
+</html>

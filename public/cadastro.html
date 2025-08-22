@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+     <link rel="icon" href="../assets/img/logo.png" type="image/x-icon">
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SENZ</title>
+  <link rel="stylesheet" href="../assets/css/style1.css">
+</head>
+<body>
+  <div class="container">
+    <img class="avatar" src="../assets/img/cadastro.menina.png" alt="Avatar">
+    <h1>Comece grátis</h1>
+    <p>Seu bem-estar começa aqui. Cadastre-se gratuitamente e explore o SENZ.</p>
+    
+    <div class="social-icons">
+      <img src="../assets/img/image-removebg-preview.png" alt="Google" onclick="loginComGoogle()" />
+      <img src="https://img.icons8.com/ios-filled/50/000000/facebook-new.png" alt="Facebook" />
+      <img src="https://img.icons8.com/ios-filled/50/000000/mac-os.png" alt="Apple" />
+      <img src="https://img.icons8.com/ios-filled/50/000000/windows8.png" alt="Windows" />
+    </div>
+
+    <div class="divider">ou</div>
+
+    <input type="text" id="nome" placeholder="nome completo" />
+    <input type="email" id="email" placeholder="e-mail" />
+    <input type="tel" id="telefone" placeholder="telefone" />
+    <input type="password" id="senha" placeholder="senha" />
+    <button onclick="criarConta()">criar conta</button>
+
+    <p class="footer">
+      Ao criar uma conta, você concorda com nossos
+      <a href="termosuso.html">termos de uso</a> e <a href="politica.html">política de privacidade</a>
+    </p>
+  </div>
+
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+  <script src="../assets/js/script1.js"></script>
+
+
+</body>
+</html>
+

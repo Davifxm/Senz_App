@@ -1,0 +1,111 @@
+    :root{
+      --azul-principal:#05285C;
+      --azul-circulo:#3866A9;
+      --azul-leve:#eaf3ff;
+      --azul-leve2:#f1f6ff;
+      --cinza-bg:#f8fafb;
+      --branco:#fff;
+      --cinza-card:#fff;
+      --cinza-borda:#e3e7ed;
+      --cinza-txt:#6c7b8a;
+      --sombra:rgba(48,54,80,.08);
+    }
+    *{box-sizing:border-box;margin:0;padding:0;font-family:Arial,Helvetica,sans-serif}
+    html,body{height:100%;background:var(--cinza-bg)}
+    body{
+      min-height:100vh;
+      display:flex;                 /* centra o conteúdo */
+      align-items:flex-start;       /* alinha pelo topo */
+      justify-content:center;       /* centraliza horizontal */
+      padding: clamp(12px,3vh,24px) 12px calc(120px + env(safe-area-inset-bottom,0px));
+    }
+
+    /* Coluna central responsiva */
+    .page{
+      width:100%;
+      max-width:430px;              /* coluna “mobile-first” */
+      margin:0 auto;                /* garante centralização */
+      display:flex;flex-direction:column;align-items:center;gap:14px;
+    }
+
+    /* Cabeçalho curvo centralizado */
+    .hero{
+      width:100%;
+      background:linear-gradient(180deg,#e6f0ff 0%,#edf5ff 100%);
+      padding:28px 18px 46px 18px;  /* um pouco mais curto embaixo */
+      border-bottom-left-radius:48% 14%;
+      border-bottom-right-radius:48% 14%;
+      box-shadow:0 2px 10px var(--sombra);
+      display:flex;flex-direction:column;align-items:center;justify-content:center;
+      text-align:center;
+    }
+    .hero h1{
+      color:var(--azul-principal);
+      font-size:clamp(1.3rem,2.5vw,1.7rem);
+      margin-bottom:8px;            /* espaço embaixo do título */
+      line-height:1.15;
+    }
+    .hero p{
+      color:var(--azul-principal);opacity:.85;
+      font-size:clamp(.92rem,2vw,1rem);
+      max-width:360px;line-height:1.4;
+    }
+
+    /* Busca central — com espaço do header (NÃO encosta) */
+    .search{
+      width:100%;max-width:360px;
+      margin:14px auto 6px auto;    /* ⬅ afastado do header */
+      position:relative;
+    }
+    .search input{
+      width:100%;padding:12px 14px 12px 40px;border-radius:12px;border:1px solid var(--cinza-borda);
+      background:var(--branco);box-shadow:0 1px 6px var(--sombra);outline:none;
+      font-size:clamp(.92rem,2vw,.98rem);color:#234;
+    }
+    .search svg{
+      position:absolute;left:12px;top:50%;transform:translateY(-50%);
+      width:18px;height:18px;fill:var(--azul-circulo);opacity:.9;
+    }
+
+    /* Lista central e alinhada */
+    .list{
+      width:100%;max-width:360px;margin:8px auto 0 auto;
+      display:flex;flex-direction:column;gap:12px;
+    }
+    .history-item{
+      display:flex;align-items:center;gap:12px;background:var(--azul-leve2);
+      border:1px solid #dbe7fb;border-radius:12px;padding:12px 14px;cursor:pointer;
+      transition:transform .12s ease, background .2s ease, border-color .2s ease;
+    }
+    .history-item:hover{transform:translateY(-1px);background:var(--azul-leve);border-color:#cfe0ff}
+    .history-item .icon{
+      width:34px;height:34px;border-radius:10px;background:#e9f1ff;display:grid;place-items:center;
+      border:1px solid #d6e4ff;box-shadow:0 1px 4px var(--sombra);flex:0 0 34px;
+    }
+    .history-item .icon svg{width:18px;height:18px;fill:#2c61a6}
+    .history-item .date{color:#2c4a7a;font-weight:700;letter-spacing:.3px;font-size:clamp(.98rem,2vw,1.02rem)}
+
+    .see-more{text-align:center;margin:10px 0 0 0;width:100%}
+    .see-more a{font-size:.92rem;color:var(--azul-circulo);text-decoration:none}
+
+    /* Dock (rodapé) fixo e centralizado */
+    .dock{
+      position:fixed;left:50%;bottom:max(20px, env(safe-area-inset-bottom,0px));
+      transform:translateX(-50%);
+      display:flex;gap:22px;background:#f7f7f7;
+      padding:12px 20px;border-radius:20px;
+      box-shadow:0 3px 10px rgba(0,0,0,.1);z-index:999;
+    }
+    .dock-icon{
+      width:42px;height:42px;border-radius:50%;background:#e3e3e3;
+      display:flex;align-items:center;justify-content:center;
+      transition:transform .2s, background .3s;cursor:pointer;
+    }
+    .dock-icon:hover{transform:scale(1.12)}
+    .dock-icon.active{background:#3866A9}
+    .dock-icon svg{width:24px;height:24px;fill:#05285c}
+    .dock-icon.active svg{fill:#fff}
+
+    @media (min-width: 900px){
+      .hero{border-bottom-left-radius:38% 12%;border-bottom-right-radius:38% 12%}
+    }

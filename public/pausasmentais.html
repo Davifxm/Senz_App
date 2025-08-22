@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pausas Mentais</title>
+<link rel="stylesheet" href="../assets/css/style13.css">
+</head>
+<body>
+  <div class="header-pausa">
+    <button class="back-arrow" onclick="goBack()">
+      <svg width="26" height="26" viewBox="0 0 24 24"><path fill="#05285C" d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+    </button>
+    <h2>Pausas Mentais</h2>
+    <span class="bubble-icon">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#A5C9F6"/><circle cx="12" cy="9.5" r="4.5" fill="#fff"/><circle cx="8.5" cy="15" r="1.2" fill="#fff"/><circle cx="15.5" cy="15" r="1.2" fill="#fff"/></svg>
+    </span>
+  </div>
+  <div class="subtitulo">Sugestões de pausas relaxantes</div>
+  <div class="main-content">
+    <div class="cards-outer">
+      <div class="cards-lista">
+        <!-- ... Seus cards continuam aqui ... -->
+        <div class="card-pausa">
+          <div class="icon-card">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="13" r="7" stroke="#3866A9" stroke-width="2" fill="#e7eefc"/><rect x="10" y="7" width="4" height="2" rx="1" fill="#3866A9"/><rect x="11" y="3" width="2" height="4" rx="1" fill="#3866A9"/><circle cx="12" cy="13" r="3" fill="#3866A9"/></svg>
+          </div>
+          <div class="card-info">
+            <div class="card-titulo">Fechar os olhos por 1 min</div>
+            <div class="card-desc">Desconecte-se rapidamente</div>
+          </div>
+        </div>
+        <div class="card-pausa">
+          <div class="icon-card">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#e7eefc"/><path d="M11.5 7a1.5 1.5 0 1 1 3 0v3.5h1a1 1 0 0 1 0 2h-5a1 1 0 1 1 0-2h1V7a1.5 1.5 0 0 1 3 0" fill="none" stroke="#3866A9" stroke-width="1.6"/></svg>
+          </div>
+          <div class="card-info">
+            <div class="card-titulo">Alongamento leve</div>
+            <div class="card-desc">Movimento dos ombros</div>
+          </div>
+        </div>
+        <div class="card-pausa">
+          <div class="icon-card">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#e7eefc"/><path d="M10 11l2-2 2 2" stroke="#3866A9" stroke-width="1.6" fill="none"/><rect x="8" y="13" width="8" height="1.7" rx="0.7" fill="#3866A9" opacity="0.25"/></svg>
+          </div>
+          <div class="card-info">
+            <div class="card-titulo">Caminhada consciente</div>
+            <div class="card-desc">Preste atenção nos seus passos</div>
+          </div>
+        </div>
+        <div class="card-pausa">
+          <div class="icon-card">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#e7eefc"/><rect x="7" y="8.5" width="10" height="2" rx="1" fill="#3866A9" opacity="0.32"/><rect x="7" y="13" width="7" height="2" rx="1" fill="#3866A9" opacity="0.32"/><rect x="7" y="17.5" width="4" height="2" rx="1" fill="#3866A9" opacity="0.32"/><rect x="12" y="7" width="2" height="7" rx="1" fill="#3866A9"/></svg>
+          </div>
+          <div class="card-info">
+            <div class="card-titulo">Escreva seus pensamentos</div>
+            <div class="card-desc">Use seu diario mental</div>
+          </div>
+        </div>
+        <div class="card-pausa">
+          <div class="icon-card">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#e7eefc"/><circle cx="9" cy="10" r="2" fill="#3866A9" opacity="0.3"/><rect x="7" y="14" width="10" height="3" rx="1.5" fill="#3866A9" opacity="0.3"/></svg>
+          </div>
+          <div class="card-info">
+            <div class="card-titulo">Observe uma paisagem</div>
+            <div class="card-desc">Sem pressa, só contemplação</div>
+          </div>
+        </div>
+        <div class="card-pausa">
+          <div class="icon-card">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#e7eefc"/><path d="M8 16c1-2 7-2 8 0" stroke="#3866A9" stroke-width="1.5" fill="none"/><ellipse cx="12" cy="10" rx="4" ry="2" fill="#3866A9" opacity="0.12"/><rect x="10" y="6" width="4" height="2" rx="1" fill="#3866A9"/></svg>
+          </div>
+          <div class="card-info">
+            <div class="card-titulo">Ficar em silêncio total</div>
+            <div class="card-desc">2 minutos de silêncio, sem celular</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Dock do rodapé padrão SENZ -->
+ <!-- Dock do rodapé padrão SENZ -->
+ <div class="dock">
+  <!-- Casa (ativo) -->
+  <div class="dock-icon" onclick="setActive(this);window.location.href='telainicial.html';">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+    </svg>
+  </div>
+
+  <!-- Frequência Cardíaca -->
+  <div class="dock-icon active" onclick="setActive(this);window.location.href='intervencoes.html';">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 
+      12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 
+      3.41 0.81 4.5 2.09C13.09 3.81 14.76 3 
+      16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 
+      6.86-8.55 11.54L12 21.35z"/>
+    </svg>
+  </div>
+
+  <!-- Histórico Emocional -->
+  <div class="dock-icon" onclick="setActive(this);window.location.href='historico.html';">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M12 2C6.48 2 2 6.48 2 
+        12s4.48 10 10 10 10-4.48 10-10S17.52 
+        2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 
+        8-8 8 3.59 8 8-3.59 8-8 8zm1-13h-2v6h6v-2h-4z"/>
+    </svg>
+  </div>
+
+  <!-- Gráficos -->
+  <div class="dock-icon" onclick="setActive(this);window.location.href='dados.html';">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M3 17h2v-7H3v7zm4 
+        0h2V7H7v10zm4 0h2v-4h-2v4zm4 
+        0h2V4h-2v13zm4 0h2v-9h-2v9z"/>
+    </svg>
+  </div>
+
+  <!-- Perfil -->
+  <div class="dock-icon" onclick="setActive(this);window.location.href='perfil.html';">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 
+        1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 
+        1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+    </svg>
+  </div>
+</div>
+
+<script src="../assets/js/script13.js"></script>
+</body>
+</html>

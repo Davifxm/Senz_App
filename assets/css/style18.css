@@ -1,0 +1,94 @@
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    :root{
+      --brand:#1db954; --brand-2:#1ed760;
+      --bg1:#1db954; --bg2:#121212;
+      --card:#0f1419cc; --stroke:#1b1f25;
+      --txt:#fff; --sub:#bfc6cf;
+    }
+    body{
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial,sans-serif;
+      background:linear-gradient(180deg,var(--bg1),var(--bg2) 55%);
+      color:var(--txt); padding-bottom:120px; position:relative;
+    }
+
+    /* topo */
+    .back{position:absolute; top:18px; left:18px; width:32px; height:32px; display:grid; place-items:center; cursor:pointer}
+    .back svg{width:100%; height:100%; fill:#fff; opacity:.9; transition:.2s}
+    .back:hover svg{transform:scale(1.08); opacity:1}
+
+    /* títulos */
+    .title{ text-align:center; font-size:28px; font-weight:800; margin-top:64px }
+    .subtitle{ text-align:center; font-size:15px; margin:8px 0 18px; color:var(--sub) }
+
+    /* card compacto */
+    .card{
+      width:min(560px,92%); margin:0 auto; background:var(--card);
+      border:1px solid var(--stroke); backdrop-filter:blur(8px);
+      border-radius:18px; box-shadow:0 16px 48px rgba(0,0,0,.35);
+      padding:16px 16px 14px;
+    }
+    .cover{ width:100%; height:300px; border-radius:14px; overflow:hidden }
+    .cover img{ width:100%; height:100%; object-fit:cover; display:block }
+
+    .row{ display:flex; justify-content:space-between; align-items:center; margin:10px 0 2px }
+    .arrow{ width:32px; height:32px; display:grid; place-items:center; cursor:pointer }
+    .arrow svg{ width:100%; height:100%; fill:#fff; opacity:.9; transition:.2s }
+    .arrow:hover svg{ transform:scale(1.06); opacity:1 }
+
+    .track-title{ text-align:center; font-size:22px; font-weight:800; color:var(--brand) }
+
+    .controls{ display:flex; gap:10px; align-items:center; justify-content:center; margin-top:12px }
+    .btn{
+      background:var(--brand); color:#07130b; border:none; border-radius:999px;
+      padding:10px 16px; font-size:14px; font-weight:900; letter-spacing:.2px; cursor:pointer;
+      box-shadow:0 6px 16px rgba(29,185,84,.25); transition:.2s
+    }
+    .btn:hover{ background:var(--brand-2) }
+    .btn.secondary{ background:#1c2127; color:#fff; border:1px solid #29313a; box-shadow:none }
+    .btn.secondary:hover{ background:#232a32 }
+
+    /* barra de progresso */
+    .bar{ position:relative; width:100%; height:8px; border-radius:999px;
+      background:rgba(255,255,255,.1); margin:14px 0 6px; box-shadow:inset 0 0 0 1px rgba(255,255,255,.06); cursor:pointer }
+    .bar-fill{ height:100%; width:0%; border-radius:999px;
+      background:linear-gradient(90deg,rgba(29,185,84,.95),rgba(30,215,96,.95)); box-shadow:0 0 16px rgba(29,185,84,.35) }
+    .bar-knob{ position:absolute; top:50%; left:0%; transform:translate(-50%,-50%); width:14px; height:14px; border-radius:50%; background:#fff;
+      box-shadow:0 0 0 3px rgba(255,255,255,.12), 0 6px 12px rgba(0,0,0,.25); pointer-events:none }
+    .time{ display:flex; justify-content:space-between; color:var(--sub); font-size:12px }
+
+    /* botões abaixo */
+    .choose{ display:block; margin:10px auto 0; background:#12171d; color:#fff; border:1px solid #24303b;
+      padding:10px 14px; border-radius:12px; font-size:13px; cursor:pointer; text-align:center }
+    .choose:hover{ background:#192029 }
+    .go-other{ display:block; margin:8px auto 0; background:#0f1a12; color:#cfeedd; border:1px solid #1f2b22;
+      padding:10px 14px; border-radius:12px; font-size:13px; cursor:pointer; text-align:center }
+    .go-other:hover{ background:#132018 }
+
+    /* bottom-sheet (picker) */
+    .sheet-overlay{ position:fixed; inset:0; background:rgba(0,0,0,.4); display:none; align-items:flex-end; z-index:998 }
+    .sheet{ background:#0f1419; border-top-left-radius:18px; border-top-right-radius:18px; width:100%; max-width:640px; margin:0 auto;
+      border:1px solid #1b1f25; box-shadow:0 -10px 40px rgba(0,0,0,.45); padding:12px 14px 18px }
+    .sheet h3{ text-align:center; font-size:16px; margin:6px 0 8px; color:#dfe7f0 }
+    .playlist{ display:flex; flex-direction:column; gap:8px; max-height:46vh; overflow:auto; padding:6px 2px }
+    .track{ display:grid; grid-template-columns:auto 1fr auto; gap:10px; align-items:center;
+      padding:9px 10px; border-radius:12px; background:#0b1015; border:1px solid #1b2027; cursor:pointer; transition:.15s }
+    .track:hover{ background:#10161d }
+    .track.active{ background:#122117; outline:1px solid var(--brand) }
+    .tcover{ width:38px; height:38px; border-radius:9px; overflow:hidden; background:#000 }
+    .tcover img{ width:100%; height:100%; object-fit:cover }
+    .tmain{ display:flex; flex-direction:column }
+    .tname{ font-size:13px; font-weight:800 }
+    .tartist,.tdur{ font-size:12px; color:#9fb0a1 }
+
+    /* dock */
+    .dock{ position:fixed; bottom:20px; left:50%; transform:translateX(-50%); display:flex; gap:18px; background:#282828;
+      padding:12px 20px; border-radius:24px; box-shadow:0 4px 16px rgba(0,0,0,.5); z-index:997 }
+    .dock-icon{ width:42px; height:42px; border-radius:50%; background:#121212; display:grid; place-items:center; cursor:pointer; transition:.2s }
+    .dock-icon:hover{ transform:scale(1.08); background:var(--brand) }
+    .dock-icon svg{ width:22px; height:22px; fill:#fff }
+    .dock-icon.active{ background:var(--brand) }
+    .dock-icon.active svg{ fill:#000 }
+
+    /* player YouTube invisível */
+    #yt-holder{ position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden }

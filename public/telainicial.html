@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+     <link rel="icon" href="../assets/img/logo.png" type="image/x-icon">
+
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SENZ</title>
+  <link rel="stylesheet" href="../assets/css/style20.css">
+
+</head>
+<body>
+  <div class="main-content">
+    <div class="header">
+      <div class="logo-text">SENZ</div>
+      <div class="user-circle"></div>
+    </div>
+    <div class="greeting">Bem vindo(a) de volta, <br></div>
+ 
+    <div class="metrics">
+      <div class="metric-card" id="card-ansiedade">
+        <img src="../assets/img/cardio.png" alt="Frequência Cardíaca">
+        <div class="metric-info">
+          <div class="title">Nivel de Ansiedade</div>
+          <div class="value">-- bpm</div>
+          <div class="status">Estável</div>
+        </div>
+      </div>
+    <div class="metric-card" id="card-eda">
+  <img src="../assets/img/galvanica.png" alt="Atividade Galvânica">
+  <div class="metric-info">
+    <div class="title">Atividade Galvânica (EDA)</div>
+    <div class="value">0.4 μS</div>
+    <div class="status">Elevado</div>
+  </div>
+</div>
+
+      <div class="metric-card">
+        <img src="../assets/img/atividadesmentais.png" alt="Exercícios Mentais">
+        <div class="metric-info">
+          <div class="title">Exercícios Mentais</div>
+          <div class="status">Último exercício: Respiração Box (Quadrada)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="chatbot-wrapper" id="chatbotWrapper">
+    <img class="robot-icon" src="../assets/img/jarves.png" alt="Chatbot">
+    <div class="bubble">
+      <button class="close-bubble" onclick="fecharBolha(event)">×</button>
+      <p>Olá, pronto para ajudar com foco e bem-estar.<br>Precisa de algo?</p>
+    </div>
+  </div>
+
+  <!-- Chat Popup -->
+  <div class="chat-popup" id="chatPopup">
+    <div class="chat-header">
+      <div class="chat-title">
+        <img src="../assets/img/jarves.png" alt="Jarvis" class="chat-avatar">
+        <span>Jarvis - Assistente IA</span>
+      </div>
+      <div class="chat-actions">
+        <button class="clear-chat" onclick="clearChatHistory()" title="Limpar histórico">🗑️</button>
+        <button class="close-chat" onclick="toggleChat()">×</button>
+      </div>
+    </div>
+    <div class="chat-messages" id="chatMessages">
+      <div class="message bot-message">
+        <div class="message-content">
+          Olá! Sou o Jarvis, seu assistente de bem-estar. Como posso ajudá-lo hoje?
+        </div>
+      </div>
+    </div>
+    <div class="chat-input-container">
+      <input type="text" id="chatInput" placeholder="Digite sua mensagem..." onkeypress="handleKeyPress(event)">
+      <button onclick="sendMessage()" class="send-button">
+        <svg viewBox="0 0 24 24" width="20" height="20">
+          <path fill="currentColor" d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div class="dock">
+    <!-- Casa (ativo) -->
+    <div class="dock-icon active" onclick="setActive(this);window.location.href='telainicial.html';">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+      </svg>
+    </div>
+
+    <!-- Frequência Cardíaca -->
+    <div class="dock-icon" onclick="setActive(this);window.location.href='intervencoes.html';">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 
+        12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 
+        3.41 0.81 4.5 2.09C13.09 3.81 14.76 3 
+        16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 
+        6.86-8.55 11.54L12 21.35z"/>
+      </svg>
+    </div>
+
+    <!-- Histórico Emocional -->
+    <div class="dock-icon" onclick="setActive(this);window.location.href='historico.html';">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M12 2C6.48 2 2 6.48 2 
+          12s4.48 10 10 10 10-4.48 10-10S17.52 
+          2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 
+          8-8 8 3.59 8 8-3.59 8-8 8zm1-13h-2v6h6v-2h-4z"/>
+      </svg>
+    </div>
+
+    <!-- Gráficos -->
+    <div class="dock-icon" onclick="setActive(this);window.location.href='dados.html';">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M3 17h2v-7H3v7zm4 
+          0h2V7H7v10zm4 0h2v-4h-2v4zm4 
+          0h2V4h-2v13zm4 0h2v-9h-2v9z"/>
+      </svg>
+    </div>
+
+    <!-- Perfil -->
+    <div class="dock-icon" onclick="setActive(this);window.location.href='perfil.html';">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 
+          1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 
+          1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+      </svg>
+    </div>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+  <script src="../config.js"></script>
+  <script src="../assets/js/script20.js"></script>
+
+
+</body>
+</html>

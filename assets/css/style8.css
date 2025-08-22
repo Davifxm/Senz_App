@@ -1,0 +1,138 @@
+    :root {
+      --azul-principal: #05285C;
+      --azul-circulo: #3866A9;
+      --cinza-bg: #fff;
+      --borda-card: #e3e7ed;
+      --azul-leve: #ecf2fc;
+      --azul-texto: #2b4e80;
+      --cinza-texto: #63799c;
+      --azul-hover: #e6f0fa;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: "Arial", sans-serif;}
+    html, body {
+      background: var(--cinza-bg);
+      height: 100%;
+      width: 100%;
+    }
+    body {
+      min-height: 100vh;
+      min-width: 100vw;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+    }
+    .container {
+      width: 100vw;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-bottom: 90px; /* espaço para dock */
+    }
+    .header {
+      width: 100%;
+      padding: 2.3rem 0 0.7rem 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .header-title {
+      font-size: 1.25rem;
+      font-weight: bold;
+      color: var(--azul-principal);
+      margin-bottom: 0.16rem;
+    }
+    .header-desc {
+      font-size: 1rem;
+      color: #3b73bb;
+      margin-bottom: 1.3rem;
+      letter-spacing: 0.01em;
+    }
+    .cards-lista {
+      width: 100%;
+      max-width: 380px;
+      display: flex;
+      flex-direction: column;
+      gap: 1.1rem;
+      align-items: center;
+      margin: 0 auto;
+    }
+    .card-interv {
+      background: #fff;
+      border: 1px solid var(--borda-card);
+      border-radius: 13px;
+      padding: 0.85rem 1.1rem 0.85rem 0.92rem;
+      display: flex;
+      align-items: center;
+      gap: 1.1rem;
+      width: 100%;
+      box-shadow: 0 2px 8px 0 rgba(48,54,80,0.03);
+      transition: box-shadow 0.14s, background 0.16s;
+      cursor: pointer;
+    }
+    .card-interv:hover {
+      background: var(--azul-hover);
+      box-shadow: 0 4px 22px 0 rgba(48,54,80,0.09);
+    }
+    .icon-card {
+      width: 34px;
+      height: 34px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .card-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2.5px;
+      flex: 1;
+    }
+    .card-titulo {
+      font-weight: bold;
+      color: var(--azul-principal);
+      font-size: 1.04rem;
+      margin-bottom: 1px;
+    }
+    .card-desc {
+      font-size: 0.93rem;
+      color: #768ba7;
+      margin-bottom: 0;
+    }
+    /* Dock Footer IGUAL ao da EDA */
+    .dock{
+      position:fixed;left:50%;bottom:max(20px, env(safe-area-inset-bottom,0px));
+      transform:translateX(-50%);
+      display:flex;gap:22px;background:#f7f7f7;
+      padding:12px 20px;border-radius:20px;
+      box-shadow:0 3px 10px rgba(0,0,0,.1);z-index:999;
+    }
+    .dock-icon{
+      width:42px;height:42px;border-radius:50%;background:#e3e3e3;
+      display:flex;align-items:center;justify-content:center;
+      transition:transform .2s, background .3s;cursor:pointer;
+    }
+    .dock-icon:hover{transform:scale(1.12)}
+    .dock-icon.active{background:#3866A9}
+    .dock-icon svg{width:24px;height:24px;fill:#05285c}
+    .dock-icon.active svg{fill:#fff}
+
+    @media (min-width: 900px){
+      .hero{border-bottom-left-radius:38% 12%;border-bottom-right-radius:38% 12%}
+    }
+    @media (max-width: 900px) {
+      .cards-lista { max-width: 97vw;}
+      .header { padding-top: 1.6rem;}
+    
+    }
+    @media (max-width: 500px) {
+      .container { padding-bottom: 77px;}
+      .header { padding-top: 1.1rem;}
+      .cards-lista { max-width: 99vw; }
+      .card-interv { padding: 0.76rem 0.55rem 0.72rem 0.55rem; border-radius: 10px;}
+      .icon-card { width: 25px; height: 25px;}
+      .header-title { font-size: 1.07rem;}
+
+    }

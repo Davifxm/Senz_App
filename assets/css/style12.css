@@ -1,0 +1,154 @@
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; }
+
+    body {
+      font-family: "Inter", sans-serif;
+      background: #ffffff;
+      color: #05285c;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-bottom: 100px; /* espaço para o dock */
+    }
+
+    /* ===== HEADER: seta no canto + títulos centralizados ===== */
+    header {
+      position: relative;
+      width: 100%;
+      max-width: 900px;
+      padding: 16px 0;
+      display: flex;
+      justify-content: center; /* centraliza o bloco de título */
+      align-items: center;
+      margin: 0 auto;
+    }
+    .back-arrow {
+      position: absolute;
+      left: 16px;            /* canto esquerdo */
+      top: 50%;
+      transform: translateY(-50%);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .back-arrow:hover { background: rgba(0,0,0,0.05); }
+    .back-arrow svg { width: 24px; height: 24px; fill: #05285c; }
+
+    .title-wrap { text-align: center; }
+    .m-sicas-calmante {
+      font-size: 32px; font-weight: 600; margin-bottom: 6px;
+    }
+    .pr-ticas-para-aliviar-o-estresse {
+      font-size: 18px; color: #1d3d66;
+    }
+
+    /* ===== CONTEÚDO / CARDS CENTRALIZADOS ===== */
+    .container {
+      width: 100%;
+      max-width: 900px;
+      padding: 10px 20px 0;
+      margin: 0 auto;
+    }
+    .cards {
+      width: 100%;
+      max-width: 800px;   /* largura dos cards */
+      margin: 24px auto 0;/* centraliza */
+    }
+
+    .music-box {
+      background: #ffffff;
+      border: 1px solid rgba(0, 0, 0, 0.09);
+      border-radius: 12px;
+      padding: 20px 20px 20px 90px;
+      margin: 24px 0;
+      position: relative;
+      min-height: 85px;
+      cursor: pointer;
+      transition: background 0.2s, box-shadow 0.2s;
+    }
+    .music-box:hover { background: #f7faff; box-shadow: 0 6px 20px rgba(5,40,92,0.08); }
+
+    .music-box .icon-circle {
+      width: 60px; height: 60px; border-radius: 50%;
+      background: #dae3f5;
+      position: absolute; left: 20px; top: 50%; transform: translateY(-50%);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .music-title { font-weight: 600; font-size: 18px; }
+    .music-desc  { font-size: 13px; color: #133a6c; margin-top: 6px; }
+
+    .dock{
+      position:fixed;left:50%;bottom:max(20px, env(safe-area-inset-bottom,0px));
+      transform:translateX(-50%);
+      display:flex;gap:22px;background:#f7f7f7;
+      padding:12px 20px;border-radius:20px;
+      box-shadow:0 3px 10px rgba(0,0,0,.1);z-index:999;
+    }
+    .dock-icon{
+      width:42px;height:42px;border-radius:50%;background:#e3e3e3;
+      display:flex;align-items:center;justify-content:center;
+      transition:transform .2s, background .3s;cursor:pointer;
+    }
+    .dock-icon:hover{transform:scale(1.12)}
+    .dock-icon.active{background:#3866A9}
+    .dock-icon svg{width:24px;height:24px;fill:#05285c}
+    .dock-icon.active svg{fill:#fff}
+
+    @media (min-width: 900px){
+      .hero{border-bottom-left-radius:38% 12%;border-bottom-right-radius:38% 12%}
+    }   
+
+    @media (max-width: 600px) {
+      .m-sicas-calmante { font-size: 24px; }
+      .pr-ticas-para-aliviar-o-estresse { font-size: 15px; }
+      .music-box { padding: 14px 12px 14px 75px; margin: 16px 0; }
+      .music-box .icon-circle { width: 50px; height: 50px; left: 12px; }
+      .music-title { font-size: 16px; }
+      .music-desc { font-size: 11px; }
+
+    }
+
+    /* ===== MODAL "EM DESENVOLVIMENTO" ===== */
+    .modal-backdrop {
+      position: fixed; inset: 0;
+      background: rgba(5, 40, 92, 0.28);
+      display: none; align-items: center; justify-content: center;
+      z-index: 1000; padding: 16px;
+    }
+    .modal-backdrop.show { display: flex; }
+
+    .modal-card {
+      width: 100%; max-width: 420px; background: #fff;
+      border-radius: 18px; box-shadow: 0 20px 50px rgba(0,0,0,0.18);
+      padding: 22px 20px 18px; text-align: center; position: relative;
+      animation: pop 0.18s ease-out;
+    }
+    .modal-icon {
+      width: 60px; height: 60px; border-radius: 16px;
+      background: #eaf2ff; margin: 0 auto 10px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .modal-icon svg { width: 32px; height: 32px; fill: #3866A9; }
+    .modal-title { font-size: 18px; font-weight: 700; color: #05285c; margin-bottom: 6px; }
+    .modal-text { font-size: 14px; color: #1d3d66; margin-bottom: 14px; line-height: 1.45; }
+    .modal-actions { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+    .btn { border: none; padding: 10px 14px; border-radius: 12px; cursor: pointer;
+           font-weight: 600; transition: transform .1s ease, opacity .2s ease; }
+    .btn:active { transform: scale(0.98); }
+    .btn-primary { background: #3866A9; color: #fff; }
+    .btn-ghost { background: #eef4ff; color: #05285c; }
+
+    .modal-close {
+      position: absolute; right: 10px; top: 10px; background: transparent; border: none; cursor: pointer; padding: 8px;
+    }
+    .modal-close svg { width: 22px; height: 22px; fill: #7a8da8; }
+
+    @keyframes pop {
+      from { transform: translateY(4px) scale(.98); opacity: 0; }
+      to   { transform: translateY(0) scale(1); opacity: 1; }
+    }

@@ -1,0 +1,152 @@
+    :root {
+      --azul-principal: #05285C;
+      --azul-circulo: #3866A9;
+      --cinza-bg: #fff;
+      --azul-leve: #d7e6fa;
+      --azul-busca: #eaf3fc;
+      --borda-card: #e3e7ed;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: "Arial", sans-serif;}
+    body {
+      background: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100vw;
+      position: relative;
+    }
+    .dados-container {
+      width: 100%;
+      max-width: 420px;
+      margin: 0 auto 80px auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      position: relative;
+      background: #fff;
+    }
+    .dados-top {
+      width: 100%;
+      background: linear-gradient(180deg, #e1effc 90%, transparent 100%);
+      border-bottom-left-radius: 90vw 28vw;
+      border-bottom-right-radius: 90vw 28vw;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding-top: 2.7rem;
+      padding-bottom: 1.1rem;
+      margin-bottom: 1.7rem;
+      min-height: 170px;
+    }
+    .dados-top h1 {
+      font-size: 1.38rem;
+      color: var(--azul-principal);
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 0.52rem;
+      letter-spacing: 0.01em;
+    }
+    .dados-top p {
+      font-size: 1.01rem;
+      color: #425C86;
+      text-align: center;
+      line-height: 1.18;
+      opacity: 0.92;
+      margin-bottom: 0;
+    }
+    .busca {
+      width: 95%;
+      max-width: 360px;
+      margin: 0 auto 1.5rem auto;
+      position: relative;
+    }
+    .busca input {
+      width: 100%;
+      border-radius: 14px;
+      border: none;
+      background: var(--azul-busca);
+      padding: 0.67rem 0.97rem 0.67rem 2.5rem;
+      font-size: 1rem;
+      color: var(--azul-principal);
+      outline: none;
+      box-shadow: 0 1px 7px 0 rgba(48,54,80,0.03);
+    }
+    .busca svg {
+      position: absolute;
+      left: 0.83rem;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 19px;
+      height: 19px;
+      opacity: 0.56;
+    }
+    .section-title {
+      margin: 0.8rem 0 0.2rem 0.8rem;
+      font-size: 1.02rem;
+      color: var(--azul-principal);
+      font-weight: bold;
+      letter-spacing: 0.01em;
+    }
+    .dados-lista {
+      display: flex;
+      flex-direction: column;
+      gap: 0.82rem;
+      width: 96%;
+      max-width: 390px;
+      margin-bottom: 1.1rem;
+    }
+    .card-data {
+      display: flex;
+      align-items: center;
+      background: #eaf3fc;
+      border-radius: 12px;
+      padding: 0.65rem 1.05rem;
+      gap: 1rem;
+      font-size: 1.07rem;
+      color: var(--azul-principal);
+      font-weight: bold;
+      box-shadow: 0 2px 8px 0 rgba(48,54,80,0.02);
+      border: none;
+      transition: box-shadow 0.14s;
+      cursor: pointer;
+    }
+    .card-data svg { flex-shrink: 0; width: 23px; height: 23px; opacity: 0.82; }
+    .card-info-data { display: flex; flex-direction: column; }
+    .data-date { font-size: 1.01rem; font-weight: bold; color: var(--azul-principal); }
+    .card-data span { font-size: 0.93rem; color: #7191c5; font-weight: 400; margin-top: 0.2rem; letter-spacing: 0.01em; }
+
+    .dock{
+      position:fixed;left:50%;bottom:max(20px, env(safe-area-inset-bottom,0px));
+      transform:translateX(-50%);
+      display:flex;gap:22px;background:#f7f7f7;
+      padding:12px 20px;border-radius:20px;
+      box-shadow:0 3px 10px rgba(0,0,0,.1);z-index:999;
+    }
+    .dock-icon{
+      width:42px;height:42px;border-radius:50%;background:#e3e3e3;
+      display:flex;align-items:center;justify-content:center;
+      transition:transform .2s, background .3s;cursor:pointer;
+    }
+    .dock-icon:hover{transform:scale(1.12)}
+    .dock-icon.active{background:#3866A9}
+    .dock-icon svg{width:24px;height:24px;fill:#05285c}
+    .dock-icon.active svg{fill:#fff}
+   
+    @media (max-width: 900px) {
+      .dados-container { max-width: 98vw; }
+
+      .dados-lista { padding: 0 0.1rem;}
+    }
+    @media (max-width: 480px) {
+      .dados-top { min-height: 105px; padding-top: 1.5rem;}
+      .dados-top h1 { font-size: 1rem;}
+      .dados-top p { font-size: 0.89rem;}
+      .busca { max-width: 96vw; }
+      .dados-lista { max-width: 99vw;}
+      .card-data { padding: 0.55rem 0.68rem; font-size: 0.93rem;}
+      .section-title { font-size: 0.95rem;}
+ 
+    }

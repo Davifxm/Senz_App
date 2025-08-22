@@ -1,0 +1,190 @@
+    :root {
+      --azul-principal: #05285C;
+      --azul-circulo: #3866A9;
+      --azul-leve: #ecf2fc;
+      --cinza-card: #f7fafd;
+      --cinza-desc: #425c73;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: "Arial", sans-serif; }
+    html, body {
+      background: white;
+      min-height: 100vh;
+      width: 100vw;
+      overflow-x: hidden;
+    }
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      width: 100vw;
+      position: relative;
+    }
+    .container {
+      width: 100vw;
+      max-width: 410px;
+      min-height: 100vh;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 80px; /* traz tudo mais para baixo */
+      padding-bottom: 150px; /* espaço maior para o dock em telas pequenas */
+      background: white;
+    }
+
+    /* ----- Header ----- */
+    header {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-bottom: 10px;
+      position: relative;
+    }
+
+    .title-row {
+      width: 100%;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center; /* mantém o título centralizado */
+      min-height: 44px;
+    }
+
+    .titulo-principal {
+      color: var(--azul-principal);
+      font-size: 1.65rem;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 2px;
+      line-height: 1.2;
+    }
+
+    .subtitulo {
+      font-size: 1rem;
+      color: #3881c6;
+      text-align: center;
+      margin-bottom: 0.6rem;
+      margin-top: 0.3rem;
+      letter-spacing: 0.01em;
+    }
+
+    /* >>> Seta antes do título (lado esquerdo, altura do texto) <<< */
+    .back-arrow {
+      position: absolute;
+      left: clamp(6px, 2vw, 18px);
+      top: 50%;
+      transform: translateY(-50%);
+      background: #fff;
+      border: none;
+      border-radius: 50%;
+      box-shadow: 0 1px 5px rgba(48,54,80,0.09);
+      width: 38px;
+      height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 2;
+      transition: background 0.2s;
+    }
+    .back-arrow:hover { background: var(--azul-leve); }
+    .back-arrow svg { width: 19px; height: 19px; fill: var(--azul-principal); }
+
+    /* ----- Lista de cards ----- */
+    .cards-lista {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0 auto;
+      gap: 12px;
+    }
+    .tecnica-card {
+      display: flex;
+      align-items: center;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 3px 16px rgba(80,125,200,0.06);
+      width: 100%;
+      max-width: 410px;
+      padding: 18px 18px 15px 15px;
+      margin-bottom: 5px;
+      cursor: pointer;
+      border: 2.2px solid transparent;
+      transition: box-shadow 0.22s, background 0.18s, border 0.19s;
+      gap: 15px;
+    }
+    .tecnica-card:hover, .tecnica-card.active {
+      background: var(--azul-leve);
+      border: 2.2px solid #e2ebfa;
+      box-shadow: 0 8px 22px rgba(46,74,173,0.13);
+    }
+    .play-btn {
+      width: 40px; height: 40px;
+      background: var(--azul-leve);
+      border: none;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 2px 6px #eaf0fb;
+      margin-right: 8px;
+      color: var(--azul-principal);
+      font-size: 1.14rem;
+      transition: background 0.19s;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+    .play-btn svg { width: 21px; height: 21px; fill: var(--azul-principal); }
+    .tecnica-info { display: flex; flex-direction: column; }
+    .tecnica-nome {
+      font-weight: bold;
+      color: var(--azul-principal);
+      font-size: 1.12rem;
+      margin-bottom: 3px;
+    }
+    .tecnica-desc {
+      font-size: 0.93rem;
+      color: var(--cinza-desc);
+      margin-bottom: 2px;
+      font-weight: 400;
+      opacity: 0.85;
+    }
+
+    /* ----- Dock / Rodapé ----- */
+    .dock{
+      position:fixed;left:50%;bottom:max(20px, env(safe-area-inset-bottom,0px));
+      transform:translateX(-50%);
+      display:flex;gap:22px;background:#f7f7f7;
+      padding:12px 20px;border-radius:20px;
+      box-shadow:0 3px 10px rgba(0,0,0,.1);z-index:999;
+    }
+    .dock-icon{
+      width:42px;height:42px;border-radius:50%;background:#e3e3e3;
+      display:flex;align-items:center;justify-content:center;
+      transition:transform .2s, background .3s;cursor:pointer;
+    }
+    .dock-icon:hover{transform:scale(1.12)}
+    .dock-icon.active{background:#3866A9}
+    .dock-icon svg{width:24px;height:24px;fill:#05285c}
+    .dock-icon.active svg{fill:#fff}
+
+    @media (min-width: 900px){
+      .hero{border-bottom-left-radius:38% 12%;border-bottom-right-radius:38% 12%}
+    }
+    /* --------- Responsividade --------- */
+    @media (max-width: 420px) {
+      .titulo-principal { font-size: 1.5rem; }
+      .subtitulo { font-size: 0.95rem; }
+      .tecnica-nome { font-size: 1.05rem; }
+      .tecnica-desc { font-size: 0.9rem; }
+      .tecnica-card { padding: 16px 14px; gap: 12px; }
+      .play-btn { width: 38px; height: 38px; }
+    }
+    @media (max-width: 360px){
+      .container { padding-bottom: 165px; }
+    }
+    @media (min-width: 768px) {
+      .container { max-width: 520px; }
+      .tecnica-card { max-width: 520px; }
+    }

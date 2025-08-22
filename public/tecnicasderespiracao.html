@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Técnicas Respiratórias</title>
+<link rel="stylesheet" href="../assets/css/style19.css">
+
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="title-row">
+        <button class="back-arrow" onclick="goBack()" aria-label="Voltar">
+          <svg viewBox="0 0 24 24">
+            <path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+          </svg>
+        </button>
+        <div class="titulo-principal">Técnicas Respiratórias</div>
+      </div>
+      <div class="subtitulo">Práticas para aliviar o estresse</div>
+    </header>
+
+    <div class="cards-lista">
+      <div class="tecnica-card" onclick="window.location.href='pulmao.html'" style="cursor:pointer;">
+        <button class="play-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+        </button>
+        <div class="tecnica-info">
+          <div class="tecnica-nome">Respiração 4-7-8</div>
+          <div class="tecnica-desc">Iniciar com áudio guiado</div>
+        </div>
+      </div>
+      <div class="tecnica-card">
+        <button class="play-btn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
+        <div class="tecnica-info"><div class="tecnica-nome">Respiração Box (Quadrada)</div><div class="tecnica-desc">Equilibre o corpo e a mente</div></div>
+      </div>
+      <div class="tecnica-card">
+        <button class="play-btn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
+        <div class="tecnica-info"><div class="tecnica-nome">Respiração Diafragmática</div><div class="tecnica-desc">Respire enchendo a barriga. Sinta a paz.</div></div>
+      </div>
+      <div class="tecnica-card">
+        <button class="play-btn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
+        <div class="tecnica-info"><div class="tecnica-nome">Respiração Kapalabhati</div><div class="tecnica-desc">Expire curta e forte pelas narinas várias vezes.</div></div>
+      </div>
+      <div class="tecnica-card">
+        <button class="play-btn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
+        <div class="tecnica-info"><div class="tecnica-nome">Respiração Lenta e Profunda</div><div class="tecnica-desc">Respire bem devagar e profundo</div></div>
+      </div>
+      <div class="tecnica-card">
+        <button class="play-btn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
+        <div class="tecnica-info"><div class="tecnica-nome">Respiração Wim Hof</div><div class="tecnica-desc">Inspire fundo 30x e depois segure sem ar por …</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dock">
+    <!-- Casa (ativo) -->
+    <div class="dock-icon" onclick="setActive(this);window.location.href='telainicial.html';">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+      </svg>
+    </div>
+
+    <!-- Frequência Cardíaca -->
+    <div class="dock-icon active" onclick="setActive(this);window.location.href='intervencoes.html';">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 
+        12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 
+        3.41 0.81 4.5 2.09C13.09 3.81 14.76 3 
+        16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 
+        6.86-8.55 11.54L12 21.35z"/>
+      </svg>
+    </div>
+
+    <!-- Histórico Emocional -->
+    <div class="dock-icon" onclick="setActive(this);window.location.href='historico.html';">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M12 2C6.48 2 2 6.48 2 
+          12s4.48 10 10 10 10-4.48 10-10S17.52 
+          2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 
+          8-8 8 3.59 8 8-3.59 8-8 8zm1-13h-2v6h6v-2h-4z"/>
+      </svg>
+    </div>
+
+    <!-- Gráficos -->
+    <div class="dock-icon" onclick="setActive(this);window.location.href='dados.html';">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M3 17h2v-7H3v7zm4 
+          0h2V7H7v10zm4 0h2v-4h-2v4zm4 
+          0h2V4h-2v13zm4 0h2v-9h-2v9z"/>
+      </svg>
+    </div>
+
+    <!-- Perfil -->
+    <div class="dock-icon" onclick="setActive(this);window.location.href='perfil.html';">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 
+          1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 
+          1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+      </svg>
+    </div>
+  </div>
+</body>
+</html>

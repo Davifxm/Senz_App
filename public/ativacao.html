@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SENZ</title>
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <img src="../assets/img/pulseira.ativação.png" alt="Pulseira SENZ">
+    <h1>Ative sua pulseira SENZ</h1>
+    <p>Digite o código que veio com sua pulseira para desbloquear a plataforma.</p>
+
+    <input type="text" id="codigo" placeholder="Ex: senz1234" />
+    <button onclick="verificarCodigo()">Ativar plataforma</button>
+
+    <div class="mensagem" id="mensagem">✅ Plataforma liberada! Redirecionando...</div>
+    <div class="erro" id="erro">❌ Código inválido. Tente novamente.</div>
+  </div>
+<script src="../assets/js/script.js"></script>
+</body>
+</html>

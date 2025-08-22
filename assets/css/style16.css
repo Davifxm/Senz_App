@@ -1,0 +1,103 @@
+    :root {
+      --azul-principal: #05285C;
+      --azul-circulo: #3866A9;
+      --azul-leve: #ecf2fc;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: "Arial", sans-serif; }
+    body {
+      background: white;
+      min-height: 100vh;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow-x: hidden;
+    }
+    .container { width: 100%; max-width: 700px; margin: 0 auto; padding: 0 1rem; display: flex; flex-direction: column; align-items: center; }
+    .back-arrow {
+      position: fixed; top: 26px; left: 26px; background: #fff; border: none; border-radius: 50%;
+      box-shadow: 0 1px 5px rgba(48,54,80,0.09); width: 44px; height: 44px;
+      display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 999; transition: background 0.2s;
+    }
+    .back-arrow:hover { background: var(--azul-leve); }
+    .back-arrow svg { width: 25px; height: 25px; fill: var(--azul-principal); transition: fill 0.18s; }
+    @media (max-width: 700px) {
+      .back-arrow { width: 36px; height: 36px; top: 12px; left: 10px;}
+      .back-arrow svg { width: 19px; height: 19px;}
+    }
+    header { width: 100%; max-width: 700px; margin: 0 auto; padding-top: 2.3rem; padding-bottom: 0.3rem; display: flex; flex-direction: column; align-items: center; }
+    .titulo-principal { color: var(--azul-principal); font-size: 1.65rem; font-weight: bold; margin-bottom: 2px; text-align: center; }
+    .subtitulo { font-size: 1rem; color: #3881c6; text-align: center; margin-bottom: 1.1rem; margin-top: 0.15rem; letter-spacing: 0.01em; }
+    main { flex: 1; display: flex; flex-direction: column; align-items: center; width: 100%; max-width: 700px; margin: 0 auto; padding-bottom: 110px; }
+    .pulmao-container { margin-top: 70px; margin-bottom: 0.5rem; width: 100%; display: flex; justify-content: center; }
+    .pulmao {
+      position: relative; width: min(55vw, 230px); height: min(55vw, 230px);
+      max-width: 230px; max-height: 230px; min-width: 110px; min-height: 110px;
+      border-radius: 50%; background: radial-gradient(circle at 60% 40%, #4c6cb3 60%, var(--azul-circulo) 100%);
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 30px rgba(0,0,0,0.08); overflow: visible; transform: scale(1);
+    }
+    .pulmao svg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; }
+    .pulmao .pulmao-arco { stroke: white; fill: none; opacity: 0.24; stroke-width: 4; }
+    .pulmao .pulmao-arco2 { stroke-width: 2.6; opacity: 0.13;}
+    .pulmao .pulmao-arco3 { stroke-width: 1.5; opacity: 0.08;}
+    .nome-tecnica { font-weight: bold; font-size: 1.15rem; color: var(--azul-principal); margin-top: 1.15rem; margin-bottom: 0.3rem; text-align: center; }
+    .barra { margin: 0.35rem auto 0.70rem auto; width: min(280px, 65vw); height: 3.5px; background-color: #ccc; border-radius: 2px; position: relative; overflow: hidden; display: flex; align-items: center; }
+    .progresso { width: 0%; height: 100%; background-color: var(--azul-principal); border-radius: 2px; transition: width 0.2s linear; }
+    .botoes { display: flex; align-items: center; justify-content: center; margin-top: 1.0rem; margin-bottom: 2.6rem; width: 100%; }
+    .botao-play { width: 46px; height: 46px; background-color: var(--azul-principal); color: white; border: none; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(52,80,110,0.09); }
+    .botao-play svg { width: 24px; height: 24px; fill: #fff;}
+    .espaco-rodape { height: 105px; width: 100%; max-width: 700px; margin: 0 auto; }
+ 
+    .dock {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 22px;
+      background: #f7f7f7;
+      padding: 12px 20px;
+      border-radius: 20px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      z-index: 999;
+    }
+    .dock-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: #e3e3e3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.2s, background 0.3s;
+      cursor: pointer;
+    }
+    .dock-icon:hover { transform: scale(1.15); }
+    .dock-icon.active { background: #3866A9; }
+    .dock-icon svg { width: 24px; height: 24px; fill: #05285c; }
+    .dock-icon.active svg { fill: #fff; }
+
+    @media (max-width: 500px) {
+      .dock { gap: 18px; padding: 10px 16px; }
+      .dock-icon { width: 36px; height: 36px; }
+      .dock-icon svg { width: 20px; height: 20px; }
+    }
+
+ 
+
+    @media (max-width:900px){
+      .container{max-width:99vw;padding-top:36px}
+      .logo-senz .logo-text{font-size:1.18rem}
+      .perfil-img{width:80px;height:80px}
+      .btn-perfil{padding:10px 0;font-size:.97rem}
+
+    }
+    @media (max-width:480px){
+      .container{padding-top:23px;padding-bottom:83px}
+      .logo-senz .logo-text{font-size:1rem}
+      .perfil-img{width:58px;height:58px}
+      .btn-perfil{padding:8px 0;font-size:.89rem}
+ 
+    }
+
